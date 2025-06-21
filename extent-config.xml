@@ -1,0 +1,8 @@
+<extentreports>
+    <configuration>
+        <theme>dark</theme>
+        <encoding>utf-8</encoding>
+        <documentTitle>Automation Execution Report</documentTitle>
+        <reportName>TestNG Selenium Report</reportName>
+    </configuration>
+</extentreports>
