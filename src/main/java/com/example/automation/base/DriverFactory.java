@@ -1,5 +1,6 @@
 package com.example.automation.base;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,6 +16,7 @@ public class DriverFactory {
             String browser = com.example.automation.utils.ConfigReader.get("browser");
             switch (browser.toLowerCase()) {
                 case "chrome":
+                    WebDriverManager.chromedriver().setup();
                     ChromeOptions options = new ChromeOptions();
                     options.addArguments("--no-sandbox");
                     options.addArguments("--disable-dev-shm-usage");
@@ -24,6 +26,7 @@ public class DriverFactory {
                     driver.set(new ChromeDriver(options));
                     break;
                 case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
                     driver.set(new FirefoxDriver());
                     break;
                 default:
